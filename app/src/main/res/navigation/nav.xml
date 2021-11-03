@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@+id/setupFragment">
+
+
+    <fragment
+        android:id="@+id/playFragment"
+        android:name="com.hyapp.sytrrraewb.PlayFragment"
+        android:label="fragment_play"
+        tools:layout="@layout/fragment_play" >
+        <action
+            android:id="@+id/action_playFragment_to_mainGameFragment"
+            app:destination="@id/mainGameFragment" />
+        <action
+            android:id="@+id/action_playFragment_to_rulesFragment"
+            app:destination="@id/rulesFragment" />
+        <action
+            android:id="@+id/action_playFragment_to_webFragment"
+            app:destination="@id/webFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/setupFragment"
+        android:name="com.hyapp.sytrrraewb.mainfolder.SetupFragment"
+        android:label="fragment_setup"
+        tools:layout="@layout/fragment_setup" >
+        <action
+            android:id="@+id/action_setupFragment_to_playFragment"
+            app:destination="@id/playFragment" />
+        <action
+            android:id="@+id/action_setupFragment_to_webFragment"
+            app:destination="@id/webFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/webFragment"
+        android:name="com.hyapp.sytrrraewb.mainfolder.WebFragment"
+        android:label="fragment_web"
+        tools:layout="@layout/fragment_web" >
+        <action
+            android:id="@+id/action_webFragment_to_playFragment"
+            app:destination="@id/playFragment" />
+        <argument
+            android:name="url"
+            app:argType="string"/>
+    </fragment>
+    <fragment
+        android:id="@+id/mainGameFragment"
+        android:name="com.hyapp.sytrrraewb.MainGameFragment"
+        android:label="fragment_main_game"
+        tools:layout="@layout/fragment_main_game" >
+        <action
+            android:id="@+id/action_mainGameFragment_to_playFragment"
+            app:destination="@id/playFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.hyapp.sytrrraewb.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" >
+        <action
+            android:id="@+id/action_rulesFragment_to_playFragment"
+            app:destination="@id/playFragment" />
+    </fragment>
+</navigation>
